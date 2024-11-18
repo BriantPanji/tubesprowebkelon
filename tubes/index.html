@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+    <!-- Menulis tailwind harus didalam class -->
+    <!-- Kalau gk hapal classnya bisa liat di: https://tailwindcss.com/docs/ atau instal ext vscode:https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss -->
+    <!-- Menulis tampilan website menggunakan tailwindcss, yang diutamakan adalah tampilan untuk mobile, gunakan extension chrome untuk melihat tampilan mobile di chrome: https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb -->
+    <!-- Kalau ada elemen yang mau diubah tergantung ukuran layar, beberapa class tailwind css harus ditulis ulang juga sesuai kebutuhan, dengan mengawali dengan prefix => sm,md,lg,xl,2xl sesuai kebutuhan -->
+    
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Untuk Icon dalam website -->
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    </script>
+  </head>
+  <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
+  <body class="bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+      
+      <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
+      <section class=" sm:hidden relative w-full flex items-center justify-center">
+        <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
+        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+      </section>
+      
+      <section class="min-w-full max-w-full my-2 flex items-center">
+        <h1 class="font-['Bungee_Shade'] text-3xl hidden xl:block mr-[3rem] text-light-bg bg-light-secondary pt-2 pb-[.6rem] px-4 rounded-lg leading-none"><a href="">SellPatu</a></h1>
+  
+        <section class="w-full h-full flex items-center justify-between">
+        
+          <!-- Fitur pencarian -->
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+            <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
+            <button type="submit" class="absolute left-4 text-light-text"><i class="fa-regular fa-magnifying-glass"></i></button>
+            <button type="reset" class="absolute right-4 text-light-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
+            
+          </form>
+        
+          <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
+            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+          </div>
+        
+        </section>
+      </section>
+
+    </nav>
+
+    <!-- Bagian untuk isi halaman -->
+    <main class="min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
+      
+      <!-- Bagian bulat dengan beberapa produk tu -->
+      <section class="w-full min-h-[15vh] h-max mb-10 mt-3">
+        <!-- <h1 class=" ml-3 text-xl font-semibold">Jenis Sepatu:</h1> -->
+        <div class=" px-5 flex flex-wrap gap-4 max-2xl:gap-3.5 justify-evenly md:justify-between md:px-0">
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Sneakers</h1></span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md pl-[.2rem]">
+              <img src="img/icon_runningshoe.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center flex"><h1 class="overflow-hidden static max-w-full text-center">Running Shoes</h1></span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_slipon.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden pb-[.1rem] static">Slip-On</h1></span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Loafers</h1></span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Boots</h1></span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Stiletto</h1></span>
+            </a>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Wedges</h1></span>
+            </a>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Flat Shoes</h1></span>
+            </a>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[80%] max-h-10 text-center"><h1 class="overflow-hidden static">Mary Janes</h1></span>
+            </a>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center w-14 min-h-14 h-14 lg:h-20 bg-opacity-90 lg:w-20 bg-light-primary  rounded-full shadow-md">
+              <img src="img/icon_sneakers.png" alt="Shoes 1" class="min-w-7 w-7 min-h-7 h-7 lg:w-9 lg:h-9 object-cover -mt-[.35rem] mb-[.25rem]">
+              <span class="text-[.455rem] lg:text-[.7rem] leading-none font-normal text-light-bg max-w-[75%] max-h-10 text-center"><h1 class="overflow-hidden static">Ballerina Flats</h1></span>
+            </a>
+            
+        </div>
+      </section>
+
+      <!-- Carousel iklan/promosi -->
+      <section class="min-w-fit w-fit max-w-full min-h-[30vh] max-h-[60vh] flex justify-center items-center rounded-lg">
+        <div class=" relative w-fit min-w-fit max-w-full max-h-[inherit] flex justify-center items-center overflow-hidden p-2 rounded-lg">
+          <div id="carousel" class=" *:snap-always  min-w-fit w-fit min-h-full max-h-[inherit] flex no-scrollbar overflow-y-hidden overflow-x-auto snap-x snap-mandatory *:block *:mx-0 px-2 gap-2 xl:gap-x-[calc(.5rem_+_2px)] mx-0 rounded-lg *:*:rounded-lg relative">
+            
+            <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+              <img class="object-cover object-center max-w-full max-h-[inherit]" src="img/banner2.jpg" alt="">
+            </div>
+            <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+              <img class="object-cover object-center max-w-full max-h-[inherit]" src="img/banner1.jpg" alt="">
+            </div>
+            <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+              <img class="object-cover object-center max-w-full max-h-[inherit]" src="img/banner3.jpg" alt="">
+            </div>
+            <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+              <img class="object-cover object-center max-w-full max-h-[inherit]" src="img/banner4.jpg" alt="">
+            </div>
+            <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+              <img class="object-cover object-center max-w-full max-h-[inherit]" src="img/banner5.jpg" alt="">
+            </div>
+            
+          </div>
+          <div class="">
+            <button id="btnScrLeft" class="absolute mx-0 my-auto -mt-5 top-auto z-30 left-5 text-xl w-7 h-7 md:text-3xl md:w-9 md:h-9 text-light-bg bg-light-text leading-none rounded-full flex items-center justify-center font-bold">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="btnScrRight" class="absolute mx-0 my-auto -mt-5 top-auto z-30 right-5 text-xl w-7 h-7 md:text-3xl md:w-9 md:h-9 text-light-bg bg-light-text leading-none rounded-full flex items-center justify-center font-bold">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+
+        </div>
+      </section>
+
+      <section id="flashsale" class="mt-20 no-scrollbar px-10 py-10 bg-light-primary bg-opacity-95 text-light-bg min-h-36 max-h-40 md:min-h-[30vh] max-w-full overflow-y-hidden overflow-x-auto rounded-md flex items-center">
+        <div class="leading-none min-w-[25vw] max-w-[25vw] md:min-w-[20%] md:max-w-[20%] xl:min-w-[15%] xl:max-w-[15%] min-h-full h-full flex justify-center items-center">
+          <span class="font-bold  leading-none text-xl bg-dark-secondary px-5 pt-2 pb-[.75rem] rounded-lg text-center">Flash Sale</span>
+        </div>
+        <div class=" py-20 px-5 mx-5 no-scrollbar min-w-full min-h-full  object-cover flex">
+          <div class=" py-20 pr-5 min-h-full max-h-full min-w-96 ">
+            <div class=" *:min-w-64 object-cover object-center max-h-full h-full min-w-[60vw] w-fit py-5 flex gap-5">
+              <a href="#" class="object-cover object-center bg-light-secondary rounded-md p-2 flex gap-3">
+                <img class=" object-center h-full w-24 rounded-lg" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                <div class="relative">
+                  <h1 class="font-semibold text-lg leading-none max-h-fit">White Denver</h1>
+                  <h2 class="text-red-500">Diskon 50%</h2>
+                  <div class="absolute bottom-2">
+                    <span class="text-[.7rem] line-through leading-none font-normal ">Rp. 500.000</span>  
+                    <h3 class="text-lg font-bold leading-none">Rp. 250.000</h3>  
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="object-cover object-center bg-light-secondary rounded-md p-2 flex gap-3">
+                <img class=" object-center h-full w-24 rounded-lg" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                <div class="relative">
+                  <h1 class="font-semibold text-lg leading-none max-h-fit">White Denver</h1>
+                  <h2 class="text-red-500">Diskon 50%</h2>
+                  <div class="absolute bottom-2">
+                    <span class="text-[.7rem] line-through leading-none font-normal ">Rp. 500.000</span>  
+                    <h3 class="text-lg font-bold leading-none">Rp. 250.000</h3>  
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="object-cover object-center bg-light-secondary rounded-md p-2 flex gap-3">
+                <img class=" object-center h-full w-24 rounded-lg" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                <div class="relative">
+                  <h1 class="font-semibold text-lg leading-none max-h-fit">White Denver</h1>
+                  <h2 class="text-red-500">Diskon 50%</h2>
+                  <div class="absolute bottom-2">
+                    <span class="text-[.7rem] line-through leading-none font-normal ">Rp. 500.000</span>  
+                    <h3 class="text-lg font-bold leading-none">Rp. 250.000</h3>  
+                  </div>
+                </div>
+              </a>
+               
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-10 sm:px-6 sm:gap-5 md:px-3 md:gap-5 lg:px-0 lg:*:w-[31%] xl:px-0 min-h-[30vh] xl:*:w-[22%] 2xl:*:w-[18%]  w-full flex flex-wrap gap-2 justify-evenly">
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="" class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl  w-[47%] p-2 rounded-md">
+          <div class=" w-full h-full">
+            <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+              <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+            </div>
+            <div class="w-full relative my-2 h-[32%] ">
+              <div class=" w-full absolute top-0 *:leading-none flex">
+                <div class="">
+                  <h1 class="text-light-accent font-bold">White Denver</h1>
+                  <span class="text-sm">Rp500.000</span>
+                </div>
+                <div class=" text-[1.7rem] absolute right-0"><i class="fa-solid fa-bookmark"></i></div>
+              </div>
+              <div class="absolute bottom-0">
+                <span class="text-sm text-yellow-500">
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-solid fa-star"></i>
+                  <i class="fa-sharp fa-regular fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <script>
+        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+        let carousel = document.getElementById('carousel');
+        document.addEventListener('DOMContentLoaded', async function() {
+          
+        });
+      </script>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+    </script>
+  </head>
+  <body class="bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+
+   
+    <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+      
+      
+      <section class=" sm:hidden relative w-full flex items-center justify-center">
+        <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
+        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+      </section>
+      
+      <section class="min-w-full max-w-full my-2 flex items-center">
+        <h1 class="font-['Bungee_Shade'] text-3xl hidden xl:block mr-[3rem] text-light-bg bg-light-secondary pt-2 pb-[.6rem] px-4 rounded-lg leading-none"><a href="">SellPatu</a></h1>
+  
+        <section class="w-full h-full flex items-center justify-between">
+        
+          
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+            <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
+            <button type="submit" class="absolute left-4 text-light-text"><i class="fa-regular fa-magnifying-glass"></i></button>
+            <button type="reset" class="absolute right-4 text-light-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
+            
+          </form>
+        
+          <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
+            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+          </div>
+        
+        </section>
+      </section>
+
+    </nav>
+
+    <main>
+        <div class="flex items-center justify-center mt-8">
+            <div class="bg-[#5c422a] p-6 rounded-lg shadow-md w-96">
+              <h1 class="text-[2rem] font-bold text-center text-white mb-6 ">Sign Up</h1>
+              <form>
+               
+                <label for="username" class="block text-white mb-2 font-medium"
+                  >Username: <span class="text-red-500">*</span></label
+                >
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="Masukkan username anda..."
+                  class="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-brown-600"
+                />
+      
+              
+                <label for="password" class="block text-white mb-2 font-medium"
+                  >Password: <span class="text-red-500">*</span></label
+                >
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Masukkan password anda..."
+                  class="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-brown-600"
+                />
+      
+                
+                <label
+                  for="confirm-password"
+                  class="block text-white mb-2 font-medium"
+                  >Konfirmasi Password: <span class="text-red-500">*</span></label
+                >
+                <input
+                  id="confirm-password"
+                  type="password"
+                  placeholder="Konfirmasi password anda..."
+                  class="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-brown-600"
+                />
+      
+                
+                <p class="text-white text-sm mb-4">
+                  * Dengan mengklik tombol
+                  <span class="font-medium">submit</span> maka Anda sudah menyetujui
+                  <span class="text-red-500">S&K yang berlaku</span> dalam website
+                  ini.
+                </p>
+      
+               
+                <p class="text-white text-sm mb-4">
+                  * Sudah punya akun?
+                  <a href="#" class="text-blue-400 underline">klik disini</a> untuk
+                  masuk ke akun.
+                </p>
+      
+                
+                <button
+                  type="submit"
+                  class="w-full bg-white text-[#5c422a] font-medium py-2 rounded hover:bg-gray-200"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+    </main>
+    
+  </body>
+</html>

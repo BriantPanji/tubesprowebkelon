@@ -1,3 +1,5 @@
 node_modules/
 wanjay/
 style.css
+*.css
+package-lock.json

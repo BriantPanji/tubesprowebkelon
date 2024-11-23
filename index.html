@@ -21,20 +21,23 @@
     <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
     <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
   </head>
   <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
    <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
-  <body class="bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+  <body class=" *:no-scrollbar no-scrollbar bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+    <nav class=" no-scrollbar min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
       
       <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
       <section class=" sm:hidden relative w-full flex items-center justify-center">
         <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
-        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span id="sideBtnMbl" class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
         <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
       </section>
       
@@ -55,7 +58,7 @@
             <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
             <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
             <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
-            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+            <span id="sideBtn" class="text-2xl z-50 cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
           </div>
         
         </section>
@@ -63,8 +66,26 @@
 
     </nav>
 
+    <aside id="sidebar" class="sidebarWrapper !transition-all *:!transition-all no-scrollbar fixed top-0 overflow-hidden min-h-screen max-h-screen h-screen w-full min-w-full max-w-full z-50 sidebarOff">
+      <div class="blurred transition-all fixed w-full min-w-full max-w-full h-full min-h-full max-h-full backdrop-blur-2xl blur-xl bg-gray-700 opacity-25 z-40"></div>
+      <section class="sidebar transition-all w-[80%] xs:w-[65%] sm:max-w-[55%] md:max-w-[50%] lg:max-w-[35%] xl:max-w-[25%] 2xl:max-w-[20%] h-full bg-light-primary text-light-bg flex flex-col py-5 z-50 relative ">
+        <div class="w-full flex items-center justify-center border-b-2 border-light-bg pb-4">
+          <h1 class="font-['Bungee_Shade'] text-2xl font-bold w-[55%] h-10 text-light-bg bg-light-secondary flex items-center justify-center rounded-md leading-none"><a href="">SellPatu</a></h1>
+        </div>
+        <div class="w-full min-h-full pr-3 py-1 mt-5">
+          <ol class="w-[85%] h-full flex flex-col gap-1 font-medium">
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105 sidebarBtnOn"><li class="flex relative w-full items-center"><i class="fa-solid fa-house"></i> <b class="absolute right-0 w-[80%]">Home</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-user"></i> <b class="absolute right-0 w-[80%]">User</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-users"></i> <b class="absolute right-0 w-[80%]">Community</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-cart-shopping"></i> <b class="absolute right-0 w-[80%]">Cart</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-bookmark"></i> <b class="absolute right-0 w-[80%]">Wishlist</b></li></a>
+          </ol>
+        </div>
+      </section>
+    </aside>
+
     <!-- Bagian untuk isi halaman -->
-    <main class="min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
+    <main class=" no-scrollbar min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
       
       <!-- Bagian bulat dengan beberapa produk tu -->
       <section class="w-full min-h-[15vh] h-max mb-10 mt-3">
@@ -781,30 +802,12 @@
         let carousel = document.getElementById('carousel');
         let leftCarButton = carouselContainer.querySelector("#btnScrLeft")
         let rightCarButton = carouselContainer.querySelector("#btnScrRight")
-        let totalIndex = carousel.children.length-1;
-        let currentIndex, total;
         document.addEventListener('DOMContentLoaded', async function() {
           
-          function getPage() {
-            const scrollLeft = carousel.scrollLeft;
-            const totalWidth = carousel.scrollWidth;
-            currentIndex = Math.round(scrollLeft / slideWidth);
-            console.log(`Current slide index: ${currentIndex}`);
-            return currentIndex
-          }
           
           const slideWidth = carousel.querySelector('div').clientWidth + 16; // Adjust for gap
 
-          if (getPage() <= 1) {
-              leftCarButton.style.display = 'none';
-          } 
           leftCarButton.addEventListener('click', () => {
-            if (getPage() <= 1) {
-              leftCarButton.style.display = 'none';
-            } 
-            if (getPage() === totalIndex) {
-              rightCarButton.style.display = 'block';
-            }
             carousel.scrollBy({
               left: -slideWidth,
               behavior: 'smooth'
@@ -812,12 +815,6 @@
           });
 
           rightCarButton.addEventListener('click', () => {
-            if (getPage() === totalIndex-1) {
-              rightCarButton.style.display = 'none';
-            }
-            if (getPage() === 0) {
-              leftCarButton.style.display = 'block';
-            }
             carousel.scrollBy({
               left: slideWidth,
               behavior: 'smooth'
@@ -826,6 +823,7 @@
         });
       </script>
 
+      <script src="script.js"></script>
     </main>
   </body>
 </html>

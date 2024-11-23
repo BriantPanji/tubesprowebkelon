@@ -1,23 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#swal2-html-container {
+    color: #e3e3e3;
 }
 
 @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-   /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer components {
+  .sidebarOff {
+    @apply !hidden;
+  }
+  .sidebarOff > .blurred {
+    @apply !hidden;
+  }
+  .sidebarOff > section {
+    @apply !-left-[80%] xs:!-left-[65%] sm:!-left-[55%] md:!-left-[50%] lg:!-left-[35%] xl:!-left-[25%] 2xl:!-left-[20%];
+  }
+  .sidebarOn {
+    @apply !fixed;
+  }
+  .sidebarOn > .blurred {
+    @apply !block;
+  }
+  .sidebarOn > section {
+    @apply !left-0;
+  }
+
+  .sidebarBtnOn {
+    @apply border-l-[12px] hover:!scale-100 hover:!border-l-4 scale-105;
   }
 }

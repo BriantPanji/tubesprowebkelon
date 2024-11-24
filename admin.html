@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+    <!-- Menulis tailwind harus didalam class -->
+    <!-- Kalau gk hapal classnya bisa liat di: https://tailwindcss.com/docs/ atau instal ext vscode:https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss -->
+    <!-- Menulis tampilan website menggunakan tailwindcss, yang diutamakan adalah tampilan untuk mobile, gunakan extension chrome untuk melihat tampilan mobile di chrome: https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb -->
+    <!-- Kalau ada elemen yang mau diubah tergantung ukuran layar, beberapa class tailwind css harus ditulis ulang juga sesuai kebutuhan, dengan mengawali dengan prefix => sm,md,lg,xl,2xl sesuai kebutuhan -->
+    
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Untuk Icon dalam website -->
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  </head>
+  <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
+  <body class="bg-light-bg text-light w-full">
+
+    <!-- Navbar -->
+    <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+      
+      <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
+      <section class=" sm:hidden relative w-full flex items-center justify-center">
+        <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
+        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+      </section>
+      
+      <section class="min-w-full max-w-full my-2 flex items-center">
+        <h1 class="font-['Bungee_Shade'] text-3xl hidden xl:block mr-[3rem] text-light-bg bg-light-secondary pt-2 pb-[.6rem] px-4 rounded-lg leading-none"><a href="">SellPatu</a></h1>
+  
+        <section class="w-full h-full flex items-center justify-between">
+        
+          <!-- Fitur pencarian -->
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+            <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
+            <button type="submit" class="absolute left-4 text-light-text"><i class="fa-regular fa-magnifying-glass"></i></button>
+            <button type="reset" class="absolute right-4 text-light-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
+            
+          </form>
+        
+          <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
+            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+          </div>
+        
+        </section>
+      </section>
+
+    </nav>
+
+    <main class="min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
+  
+    <!-- Table - Start -->
+      <div class="h-full p-[2%] w-full">
+        <div class="rounded-lg p-[4%] bg-light-tertiary font-bold bg-opacity-40 border-primary-light border-2 overflow-x-auto shadow-md">
+          <h1 class="text-lg md:text-2xl underline font-bold text-black mb-4">Users</h1>
+          <table class="w-full table-fixed border-separate border-spacing-y-2 bg-opacity-0 items-center">
+            <!-- Header -->
+            <thead class="rounded-lg">
+              <tr class="bg-light-tertiary bg-opacity-40 text-black ">
+                <th class="w-1/12 py-2 px-4 text-left rounded-l-lg">NO.</th>
+                <th class="py-2 px-4 text-left">Nama</th>
+                <th class="w-1/4 py-2 px-4 text-left">Role</th>
+                <th class="w-1/4 py-2 px-4 text-left rounded-r-lg">Action</th>
+              </tr>
+            </thead>
+            <!-- Body -->
+            <tbody>
+              <!-- Admin Rows -->
+              <tr class="bg-light-tertiary rounded-lg bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">1</td>
+                <td class="py-2 px-4">panjikun</td>
+                <td class="py-2 px-4 text-[#17695b] font-bold">Admin</td>
+                <td class="py-2 px-4 flex gap-2">
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-light-tertiary bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">2</td>
+                <td class="py-2 px-4">gilberto</td>
+                <td class="py-2 px-4 text-[#17695b] font-bold">Admin</td>
+                <td class="py-2 px-4 flex gap-2 rounded-r-lg">
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-light-tertiary bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">3</td>
+                <td class="py-2 px-4">farelbramasta</td>
+                <td class="py-2 px-4 text-[#17695b] font-bold">Admin</td>
+                <td class="py-2 px-4 flex gap-2 rounded-r-lg">
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </button>
+                </td>
+              </tr>
+              <!-- User Rows -->
+              <tr class="bg-light-tertiary bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">4</td>
+                <td class="py-2 px-4">sannylight</td>
+                <td class="py-2 px-4 text-blue-600 font-bold">User</td>
+                <td class="py-2 px-4 flex gap-2 rounded-r-lg">
+                  <button class="text-yellow-500 hidden sm:block">
+                    <i class="fas fa-headset"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-light-tertiary bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">5</td>
+                <td class="py-2 px-4">winsonofawitch</td>
+                <td class="py-2 px-4 text-blue-600 font-bold">User</td>
+                <td class="py-2 px-4 flex gap-2 rounded-r-lg">
+                  <button class="text-yellow-500 hidden sm:block">
+                    <i class="fas fa-headset"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical "></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="bg-light-tertiary bg-opacity-40">
+                <td class="py-2 px-4 rounded-l-lg">6</td>
+                <td class="py-2 px-4">fufufafaiz</td>
+                <td class="py-2 px-4 text-blue-600 font-bold">User</td>
+                <td class="py-2 px-4 flex gap-2 rounded-r-lg">
+                  <button class="text-yellow-500 hidden sm:block">
+                    <i class="fas fa-headset"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-lock"></i>
+                  </button>
+                  <button class="text-red-600 hidden sm:block">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                  <button class="text-red-600 hover:text-red-500 block sm:hidden">
+                    <i class="fas fa-ellipsis-vertical"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+        
+      
+    <!-- Table - End -->
+    </main>  
+  </body>
+</html>

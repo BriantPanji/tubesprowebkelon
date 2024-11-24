@@ -20,14 +20,12 @@ module.exports = {
       },
       colors: {
         dark: {
-          /* 'text': '#393D3F',
-          'bg': '#FEF6EB',
+          'bg': '#191919',
+          'text': '#FEF6EB',
           'primary': '#493628',
           'secondary': '#1A1414',
-          'tertiary': '#505050',
-          'accent': '#393D3F', */
-
-
+          'tertiary': '#C7C1B9',
+          'accent': '#B9B4AE'
 
         },
         light: {

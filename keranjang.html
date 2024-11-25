@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+    <!-- Menulis tailwind harus didalam class -->
+    <!-- Kalau gk hapal classnya bisa liat di: https://tailwindcss.com/docs/ atau instal ext vscode:https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss -->
+    <!-- Menulis tampilan website menggunakan tailwindcss, yang diutamakan adalah tampilan untuk mobile, gunakan extension chrome untuk melihat tampilan mobile di chrome: https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb -->
+    <!-- Kalau ada elemen yang mau diubah tergantung ukuran layar, beberapa class tailwind css harus ditulis ulang juga sesuai kebutuhan, dengan mengawali dengan prefix => sm,md,lg,xl,2xl sesuai kebutuhan -->
+    
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Untuk Icon dalam website -->
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    </script>
+  </head>
+  <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
+  <body class="bg-light-bg text-light-text max-w-full min-w-full min-h-screen">
+    <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+        <div class="container">
+            <h1 class="font-['Bungee_Shade'] text-3xl text-center xl:block w-36 text-light-bg bg-light-secondary pt-2 pb-[.6rem] px-4 rounded-lg leading-none"><a href="">Cart</a></h1>
+        </div>
+    </nav>
+    
+    <div class="justify-center">
+        <div class=" bg-light-primary text-white bg-opacity-80 rounded-lg mt-3 p-6 w-auto h-auto shadow-lg ml-3 md:ml-3 mr-3 sm:ml-3 mr-3">
+          <h1 class="font-bold text-3xl mb-6">Panji</h1>
+
+          <div class="container">
+            <div class=" bg-light-secondary text-white rounded-lg mt-3 p-6 w-36 h-44 shadow-lg ml-3 md:ml-3 mr-3 sm:ml-3 mr-3">
+                <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+                    <img class=" object-center h-full w-24 rounded-lg" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                  </div>
+            <h1 class="text-white font-semibold text-center">Deskripsi</h1>
+            </div>
+            <div class="flex placeholder: justify-end">
+                <button class="bg-light-secondary bg-opacity-50 w-14 h-8 text-center font-bold rounded-lg ">bayar</button>
+              </div>
+          </div>
+        </div>
+    </div>
+
+        <div class="justify-center">
+            <div class=" bg-light-primary text-white bg-opacity-80 rounded-lg mt-3 p-6 w-auto h-auto shadow-lg ml-3 md:ml-3 mr-3 sm:ml-3 mr-3">
+              <h1 class="font-bold text-3xl mb-6">Superstar</h1>
+              <div class="container">
+                <div class=" bg-light-secondary text-white rounded-lg mt-3 p-6 w-36 h-44 shadow-lg ml-3 md:ml-3 mr-3 sm:ml-3 mr-3">
+                    <div class=" object-cover object-center w-fit min-w-fit max-h-[inherit] snap-center">
+                        <img class=" object-center h-full w-24 rounded-lg" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                      </div>
+                <h1 class="text-white text-center font-semibold">Deskripsi</h1>
+                </div>
+                <div class="flex placeholder: justify-end">
+                    <button class="bg-light-secondary bg-opacity-50 w-14 h-8 text-center font-bold rounded-lg ">bayar</button>
+                  </div>
+               </div>
+            </div>
+        </div>
+    
+</body>
+</html>

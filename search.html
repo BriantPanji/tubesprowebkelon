@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+    <!-- Menulis tailwind harus didalam class -->
+    <!-- Kalau gk hapal classnya bisa liat di: https://tailwindcss.com/docs/ atau instal ext vscode:https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss -->
+    <!-- Menulis tampilan website menggunakan tailwindcss, yang diutamakan adalah tampilan untuk mobile, gunakan extension chrome untuk melihat tampilan mobile di chrome: https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb -->
+    <!-- Kalau ada elemen yang mau diubah tergantung ukuran layar, beberapa class tailwind css harus ditulis ulang juga sesuai kebutuhan, dengan mengawali dengan prefix => sm,md,lg,xl,2xl sesuai kebutuhan -->
+    
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Untuk Icon dalam website -->
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  </head>
+  <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg dark:bg-dark-bg -->
+  <body class=" *:no-scrollbar no-scrollbar bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class=" no-scrollbar min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
+      
+      <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
+      <section class=" sm:hidden relative w-full flex items-center justify-center">
+        <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
+        <span id="sideBtnMbl" class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+      </section>
+      
+      <section class="min-w-full max-w-full my-2 flex items-center">
+        <h1 class="font-['Bungee_Shade'] text-3xl hidden xl:block mr-[3rem] text-light-bg bg-light-secondary pt-2 pb-[.6rem] px-4 rounded-lg leading-none"><a href="">SellPatu</a></h1>
+  
+        <section class="w-full h-full flex items-center justify-between">
+        
+          <!-- Fitur pencarian -->
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+            <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
+            <button type="submit" class="absolute left-4 text-light-text dark:text-dark-text"><i class="fa-regular fa-magnifying-glass"></i></button>
+            <button type="reset" class="absolute right-4 text-light-text dark:text-dark-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
+            
+          </form>
+        
+          <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
+            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span id="sideBtn" class="text-2xl z-50 cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+          </div>
+        
+        </section>
+      </section>
+
+    </nav>
+
+    <aside id="sidebar" class="sidebarWrapper !transition-all *:!transition-all no-scrollbar fixed top-0 overflow-hidden min-h-screen max-h-screen h-screen w-full min-w-full max-w-full z-50 sidebarOff">
+      <div class="blurred transition-all fixed w-full min-w-full max-w-full h-full min-h-full max-h-full backdrop-blur-2xl blur-xl bg-gray-700 opacity-25 z-40"></div>
+      <section class="sidebar transition-all w-[80%] xs:w-[65%] sm:max-w-[55%] md:max-w-[50%] lg:max-w-[35%] xl:max-w-[25%] 2xl:max-w-[20%] h-full bg-light-primary text-light-bg flex flex-col py-5 z-50 relative ">
+        <div class="w-full flex items-center justify-center border-b-2 border-light-bg pb-4">
+          <h1 class="font-['Bungee_Shade'] text-2xl font-bold w-[55%] h-10 text-light-bg bg-light-secondary flex items-center justify-center rounded-md leading-none"><a href="">SellPatu</a></h1>
+        </div>
+        <div class="w-full min-h-full pr-3 py-1 mt-5">
+          <ol class="w-[85%] h-full flex flex-col gap-1 font-medium">
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105 sidebarBtnOn"><li class="flex relative w-full items-center"><i class="fa-solid fa-house"></i> <b class="absolute right-0 w-[80%]">Home</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-user"></i> <b class="absolute right-0 w-[80%]">User</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-users"></i> <b class="absolute right-0 w-[80%]">Community</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-cart-shopping"></i> <b class="absolute right-0 w-[80%]">Cart</b></li></a>
+            <a href="#" class=" transition-all text-lg w-full h-12 min-w-full max-w-full min-h-1 bg-light-secondary flex items-center pl-5 rounded-r-lg relative border-light-bg hover:scale-105"><li class="flex relative w-full items-center"><i class="fa-solid fa-bookmark"></i> <b class="absolute right-0 w-[80%]">Wishlist</b></li></a>
+          </ol>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Bagian untuk isi halaman -->
+    <main class="dark no-scrollbar min-w-full max-w-full min-h-screen text-light-text dark:text-dark-text bg-light-bg dark:bg-dark-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col relative">
+      <section class="sortby min-w-full max-w-full min-h-2 absolute top-0 left-0 flex justify-center">
+        <div class="w-fit min-h-3 flex justify-center items-center bg-light-tertiary dark:bg-dark-tertiary bg-opacity-75 dark:bg-opacity-75 text-light-bg dark:text-dark-bg rounded-b-md px-5 py-2 gap-4">
+          <button class="flex gap-2 items-center justify-center bg-light-secondary dark:bg-dark-text  min-w-16 w-24 max-w-24 min-h-8 rounded-md hover:scale-95"><span class="leading-none font-semibold">Harga</span><i class="fa-regular fa-arrow-up-long"></i></button>
+          <button class="flex gap-2 items-center justify-center bg-light-secondary dark:bg-dark-text  min-w-16 w-24 max-w-24 min-h-8 rounded-md hover:scale-95"><span class="leading-none font-semibold">Nama</span><i class="fa-regular fa-arrow-up-arrow-down"></i></button>
+          <button class="flex gap-2 items-center justify-center bg-light-secondary dark:bg-dark-text  min-w-16 w-24 max-w-24 min-h-8 rounded-md hover:scale-95"><span class="leading-none font-semibold">Rating</span><i class="fa-regular fa-arrow-up-arrow-down"></i></button>
+        </div>
+      </section>
+
+      <section id="prodlist" class="mt-20 sm:px-6 sm:gap-5 md:px-3 md:gap-5 lg:px-0 lg:*:w-[31%] xl:px-0 min-h-[30vh] xl:*:w-[22%] 2xl:*:w-[18%]  w-full flex flex-wrap gap-2 justify-evenly">
+        
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="max-w-full text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+        <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+          <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
+              <div class=" w-full h-full">
+                <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
+                  <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
+                </div>
+                <div class="w-full relative my-2 h-[32%] ">
+                  <div class=" w-full absolute px-[.3rem] top-0 *:leading-none flex">
+                    <div class="leading-none flex flex-col justify-start items-start max-w-[90%]">
+                      <h1 class="text-light-accent dark:text-dark-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                      <span class="text-sm font-medium leading-none">Rp500.000</span>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 w-full">
+                    <span class="text-base text-yellow-600">
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                      <i class="fa-sharp fa-regular fa-star-sharp"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
+               <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+        </div>
+      </section>
+
+      <script>
+        // const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+        let carouselContainer = document.getElementById('carouselContainer');
+        let carousel = document.getElementById('carousel');
+        let leftCarButton = carouselContainer.querySelector("#btnScrLeft")
+        let rightCarButton = carouselContainer.querySelector("#btnScrRight")
+        document.addEventListener('DOMContentLoaded', async function() {
+          
+          
+          const slideWidth = carousel.querySelector('div').clientWidth + 16; // Adjust for gap
+
+          leftCarButton.addEventListener('click', () => {
+            carousel.scrollBy({
+              left: -slideWidth,
+              behavior: 'smooth'
+            });
+          });
+
+          rightCarButton.addEventListener('click', () => {
+            carousel.scrollBy({
+              left: slideWidth,
+              behavior: 'smooth'
+            });
+          });
+        });
+      </script>
+
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>

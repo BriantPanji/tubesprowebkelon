@@ -40,3 +40,11 @@ sidebarBg.addEventListener('click', () => {
         toggleClass(document.body, ['overflow-hidden']);
     }
 });
+
+function persenHarga(harga, persen) {
+    return {
+        hasil: Math.round(harga - (harga*(persen/100))),
+        kurang: Math.round((harga*(persen/100)))
+    }
+}
+

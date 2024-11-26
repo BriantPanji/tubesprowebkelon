@@ -20,8 +20,8 @@
 
   </head>
   <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
-   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
-  <body class="bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg dark:bg-dark-bg -->
+  <body class="dark bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text max-w-full min-w-full min-h-screen overflow-x-hidden">
 
     <!-- Navbar -->
     <nav class="min-w-full max-w-full min-h-max max-h-max sm:min-h-fit sm:max-h-fit h px-8 pb-1 pt-3 sm:!py-2 lg:!py-1 flex items-center flex-col bg-light-primary">
@@ -29,8 +29,8 @@
       <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
       <section class=" sm:hidden relative w-full flex items-center justify-center">
         <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
-        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
-        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+        <span class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 dark:bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 dark:bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
       </section>
       
       <section class="min-w-full max-w-full my-2 flex items-center">
@@ -39,18 +39,18 @@
         <section class="w-full h-full flex items-center justify-between">
         
           <!-- Fitur pencarian -->
-          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 dark:bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
             <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
-            <button type="submit" class="absolute left-4 text-light-text"><i class="fa-regular fa-magnifying-glass"></i></button>
-            <button type="reset" class="absolute right-4 text-light-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
+            <button type="submit" class="absolute left-4 text-light-text dark:text-dark-text"><i class="fa-regular fa-magnifying-glass"></i></button>
+            <button type="reset" class="absolute right-4 text-light-text dark:text-dark-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
             
           </form>
         
           <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
             <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
-            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
-            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
-            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span class="text-2xl cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg dark:bg-dark-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
           </div>
         
         </section>
@@ -59,14 +59,14 @@
     </nav>
 
     <!-- Bagian untuk isi halaman -->
-    <main class="*:leading-none min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
+    <main class="*:leading-none min-w-full max-w-full min-h-screen text-light-text dark:text-dark-text bg-light-bg dark:bg-dark-bg  p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
     
       <section class="akun md:px-16 lg:px-24 2xl:px-36">
-        <div class=" w-full min-w-full max-w-full min-h-2 h-fit bg-light-tertiary bg-opacity-35 px-4 pt-3 pb-4 rounded-lg flex flex-col">
+        <div class=" w-full min-w-full max-w-full min-h-2 h-fit bg-light-tertiary dark:bg-dark-tertiary bg-opacity-35 dark:bg-opacity-35 px-4 pt-3 pb-4 rounded-lg flex flex-col">
           <h1 class="w-fit h-fit text-2xl md:text-3xl font-bold mb-2">Akun Anda</h1>
           <div class="w-full h-fit flex items-center justify-between">
             <div class="w-full h-fit flex items-center gap-3">
-              <div class="w-20 h-20 bg-light-secondary bg-opacity-70 rounded-full flex items-center justify-center">
+              <div class="w-20 h-20 bg-light-secondary bg-opacity-70 dark:bg-opacity-70 rounded-full flex items-center justify-center">
                 <img class="w-[4.5rem] h-[4.5rem] rounded-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
               </div>
               <div class="flex flex-col justify-between">
@@ -74,12 +74,12 @@
                 <h2 class="text-lg">Email Anda</h2>
                 <label for="nowa text-lg font-normal ">WhatsApp Anda: </label>
                 <form action="" class="flex gap-3 items-center mt-2">
-                  <input type="tel" name="nowa" id="nowa" class="rounded-md min-h-8 h-8 max-h-8 min-w-40 w-40 max-w-40 px-2 flex items-center bg-light-bg shadow-xs">
-                  <button type="submit" name="changenowa" class="bg-light-bg text-red-700 border border-solid border-red-700 font-bold min-w-[4.5rem] w-[4.5rem] max-w-[4.5rem] h-8 min-h-8 max-h-8 rounded-md shadow-xs hover:shadow-none hover:scale-95 flex items-center justify-center"><i class="text-xl fa-regular fa-pen-to-square"></i> Ganti</button>
+                  <input type="tel" name="nowa" id="nowa" class="rounded-md min-h-8 h-8 max-h-8 min-w-40 w-40 max-w-40 px-2 flex items-center bg-light-bg dark:bg-dark-bg dark:bg-opacity-80 shadow-xs">
+                  <button type="submit" name="changenowa" class="bg-light-bg dark:bg-dark-bg text-red-700 border border-solid border-red-700 font-bold min-w-[4.5rem] w-[4.5rem] max-w-[4.5rem] h-8 min-h-8 max-h-8 rounded-md shadow-xs hover:shadow-none hover:scale-95 flex items-center justify-center"><i class="text-xl fa-regular fa-pen-to-square"></i> Ganti</button>
                 </form>
               </div>
             </div>
-            <button class="w-10 h-10 bg-light-secondary text-light-bg bg-opacity-70 rounded-full flex items-center justify-center">
+            <button class="w-10 h-10 bg-light-secondary dark:bg-dark-text text-light-bg dark:text-dark-bg bg-opacity-70 dark:bg-opacity-70 rounded-full flex items-center justify-center">
               <i class="fa-solid fa-right-to-bracket"></i>
             </button>
           </div>
@@ -89,16 +89,16 @@
 
         <section id="preview" class=" mt-10 w-full min-h-5 flex flex-col">
             <div class="w-full">
-                <h1 class="text-2xl lg:text-[2rem] font-extrabold bg-light-tertiary bg-opacity-35 leading-none px-3 pb-3 pt-2.5 rounded-md w-fit ">Preview Anda</h1>
+                <h1 class="text-2xl lg:text-[2rem] font-extrabold bg-light-tertiary dark:bg-dark-tertiary bg-opacity-35 dark:bg-opacity-35 leading-none px-3 pb-3 pt-2.5 rounded-md w-fit ">Preview Anda</h1>
             </div>
             <div class="w-full h-fit flex flex-col xl:!flex-row lg:justify-between lg:gap-5 sm:px-7 md:px-14 lg:px-20 xl:px-5 ">
                 <div class="flex w-full xl:max-w-[50%] 2xl:max-w-[40%] mt-10 justify-center items-center px-7 xs:px-0">
-                    <div id="keuangan" class="max-w-full w-full min-w-[10%] min-h-12 px-5 py-3 rounded-md bg-light-tertiary bg-opacity-35 flex flex-col">
+                    <div id="keuangan" class="max-w-full w-full min-w-[10%] min-h-12 px-5 py-3 rounded-md bg-light-tertiary dark:bg-dark-tertiary bg-opacity-35 dark:bg-opacity-35 flex flex-col">
                         <div class="w-full">
                             <h1 class="leading-none text-2xl font-bold w-fit h-fit">Keuangan [rupiah]</h1>
                         </div>
                         <div class="flex flex-col xs:flex-row items-center w-full h-full gap-3 mt-2">
-                            <div class="flex w-full xs:min-h-20 bg-light-tertiary bg-opacity-30 rounded-md py-1">
+                            <div class="flex w-full xs:min-h-20 bg-light-tertiary dark:bg-dark-tertiary bg-opacity-30 dark:bg-opacity-30 rounded-md py-1">
                                 <div class="">
                                     <img class="max-w-20 xs:max-w-[4.2rem]" src="img/icon_increase.svg" alt="">
                                 </div>
@@ -107,7 +107,7 @@
                                     <h2 class="font-bold text-xl leading-none absolute bottom-3">Rp1.234.567</h2>
                                 </div>
                             </div>
-                            <div class="flex w-full xs:min-h-20 bg-light-tertiary bg-opacity-30 rounded-md py-1">
+                            <div class="flex w-full xs:min-h-20 bg-light-tertiary dark:bg-dark-tertiary bg-opacity-30 dark:bg-opacity-30 rounded-md py-1">
                                 <div class="">
                                     <img class="max-w-20 xs:max-w-[4.2rem]" src="img/icon_decrease.svg" alt="">
                                 </div>
@@ -120,12 +120,12 @@
                     </div>
                 </div>
                 <div class="flex w-full xl:max-w-[50%] 2xl:max-w-[40%] mt-10 justify-center items-center px-7 xs:px-0">
-                    <div id="produk" class="max-w-full w-full min-w-[10%] min-h-12 px-5 py-3 rounded-md bg-light-tertiary bg-opacity-35 flex flex-col">
+                    <div id="produk" class="max-w-full w-full min-w-[10%] min-h-12 px-5 py-3 rounded-md bg-light-tertiary dark:bg-dark-tertiary bg-opacity-35 dark:bg-opacity-35 flex flex-col">
                         <div class="w-full">
                             <h1 class="leading-none text-2xl font-bold w-fit h-fit">Produk [item]</h1>
                         </div>
                         <div class="flex flex-col xs:flex-row items-center w-full h-full gap-3 mt-2">
-                            <div class="flex w-full xs:min-h-20 bg-light-tertiary bg-opacity-30 rounded-md py-1">
+                            <div class="flex w-full xs:min-h-20 bg-light-tertiary dark:bg-dark-tertiary bg-opacity-30 dark:bg-opacity-30 rounded-md py-1">
                                 <div class="">
                                     <img class="max-w-20 xs:max-w-[4.2rem]" src="img/icon_increase.svg" alt="">
                                 </div>
@@ -134,7 +134,7 @@
                                     <h2 class="font-bold text-xl leading-none absolute bottom-3">200</h2>
                                 </div>
                             </div>
-                            <div class="flex w-full xs:min-h-20 bg-light-tertiary bg-opacity-30 rounded-md py-1">
+                            <div class="flex w-full xs:min-h-20 bg-light-tertiary dark:bg-dark-tertiary bg-opacity-30 dark:bg-opacity-30 rounded-md py-1">
                                 <div class="">
                                     <img class="max-w-20 xs:max-w-[4.2rem]" src="img/icon_decrease.svg" alt="">
                                 </div>
@@ -173,16 +173,16 @@
             </div>
         </section>
 
-        <section class="min-w-full w-full max-w-full min-h-2 h-fit text-light-secondary bg-light-accent rounded-md bg-opacity-35 flex flex-col mt-10 pb-5">
+        <section class="min-w-full w-full max-w-full min-h-2 h-fit text-light-secondary dark:text-dark-text bg-light-accent dark:bg-dark-tertiary rounded-md bg-opacity-35 dark:bg-opacity-35 flex flex-col mt-10 pb-5">
             <div class="atas text-2xl font-bold flex justify-between items-center px-5 py-3">
-                <h1 class="border-b-[3px] border-light-secondary leading-9">Produk Saya</h1>
-                <button class="w-10 h-10 bg-light-text bg-opacity-90 font-[900] rounded-md text-light-bg text-3xl shadow-xs shadow-light-text hover:scale-105 hover:shadow-none transition-all"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                <h1 class="border-b-[3px] border-light-secondary dark:border-dark-text leading-9">Produk Saya</h1>
+                <button class="w-10 h-10 bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-90 font-[900] rounded-md text-light-bg dark:text-dark-bg text-3xl shadow-xs shadow-light-text dark:shadow-dark-tertiary hover:scale-105 hover:shadow-none transition-all"><i class="fa-sharp fa-solid fa-plus"></i></button>
             </div>
             <!-- Product card container -->
             <div class="bawah mt-10 sm:px-16 sm:gap-x-6 sm:gap-y-5 md:px-3 md:gap-5 lg:px-3 lg:gap-4 lg:*:w-[31%] xl:px-4 xl:gap-3 min-h-[30vh] xl:*:w-[22%] 2xl:*:w-[18%]  w-full flex flex-wrap gap-2 justify-evenly">
                 <!-- -- Product Card -- -->
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -190,7 +190,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -206,18 +206,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -225,7 +225,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -241,18 +241,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                       </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -260,7 +260,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -276,18 +276,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -295,7 +295,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -311,18 +311,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -330,7 +330,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -346,18 +346,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -365,7 +365,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -381,18 +381,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -400,7 +400,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -416,18 +416,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -435,7 +435,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -451,18 +451,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -470,7 +470,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -486,18 +486,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -505,7 +505,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -521,18 +521,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -540,7 +540,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -556,18 +556,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -575,7 +575,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -591,18 +591,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -610,7 +610,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -626,18 +626,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -645,7 +645,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -661,18 +661,18 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>
-                 <div class="bg-light-text bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
-                   <a href="" class="bg-opacity-35 h-full w-full rounded-md">
+                 <div class="bg-light-text dark:bg-dark-text bg-opacity-35 dark:bg-opacity-35 h-64 md:h-80 md:text-2xl p-2 w-[47%] rounded-md relative">
+                   <a href="" class="bg-opacity-35 dark:bg-opacity-35 h-full w-full rounded-md">
                        <div class=" w-full h-full">
                          <div class=" max-h-[65%] h-[65%] w-full object-cover object-center ">
                            <img class="object-cover object-center rounded-md max-h-full min-w-full" src="https://paulmay.co.id/wp-content/uploads/2023/03/DenverWhite-006.jpg.webp" alt="">
@@ -680,7 +680,7 @@
                          <div class="w-full relative my-2 h-[32%] ">
                            <div class=" w-full absolute top-0 *:leading-none flex">
                              <div class="w-full h-fit flex flex-col max-w-[89%]">
-                               <h1 class="text-light-accent font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
+                               <h1 class="text-light-accent dark:text-dark-text font-bold md:text-lg leading-none truncate max-w-full">White Denver</h1>
                                <span class="text-sm leading-none">Rp500.000</span>
                              </div>
                            </div>
@@ -696,13 +696,13 @@
                          </div>
                        </div>
                      </a>
-                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text">
+                     <div class="w-10 min-w-10 max-w-16 max-h-[50%] h-[32%] absolute bottom-0 right-0 z-10 text-light-text dark:text-dark-text">
                         <button class="absolute right-3 top-0 text-[1.7rem] font-thin"><i class="fa-regular fa-bookmark"></i></button>
                         <button class="btnProdUtil absolute right-3 bottom-1 text-[1.7rem]"><i class="fa-regular fa-ellipsis"></i></button>
-                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text bg-opacity-90 *:bg-opacity-90">
+                        <div class="prodUtil absolute -bottom-1 right-12 text-[1.6rem] w-[5.1rem] h-11 hidden items-center rounded-md justify-evenly leading-none text-light-bg bg-light-text dark:bg-dark-text bg-opacity-90 dark:bg-opacity-80 *:bg-opacity-90 dark:*:dark:bg-opacity-80">
                           <span class="absolute border-y-[18px] border-solid border-y-transparent border-l-[15px] border-l-light-text -right-2 z-[-99]"></span>
-                          <button class="text-red-600 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
-                          <button class="text-yellow-500 hover:scale-105 bg-light-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
+                          <button class="text-red-600 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                          <button class="text-yellow-500 hover:scale-105 bg-light-bg dark:bg-dark-bg p-1 rounded-lg"><i class="fa-regular fa-pen-to-square"></i></button>
                         </div>
                      </div>
                  </div>

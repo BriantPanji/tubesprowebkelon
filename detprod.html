@@ -29,8 +29,8 @@
     
 </head>
 <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
-<!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg -->
-<body class=" *:no-scrollbar no-scrollbar bg-light-bg text-light-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+<!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg dark:bg-dark-bg -->
+<body class=" *:no-scrollbar no-scrollbar bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text max-w-full min-w-full min-h-screen overflow-x-hidden">
     
     <script>
     let pesanWhatsapp = 'https://api.whatsapp.com/send?phone=628&text=Beli bang';
@@ -41,8 +41,8 @@
       <!-- Tambahan navbar untuk mobile dan beberapa tablet mini -->
       <section class=" sm:hidden relative w-full flex items-center justify-center">
         <h1 class="font-['Bungee_Shade'] text-xl font-bold w-fit text-light-bg bg-light-secondary pt-1 pb-[.3rem] px-2 rounded-[4px] leading-none"><a href="">SellPatu</a></h1>
-        <span id="sideBtnMbl" class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
-        <span class=" bg-light-secondary bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
+        <span id="sideBtnMbl" class=" absolute right-0 text-light-bg bg-light-secondary  bg-opacity-80 dark:bg-opacity-80 hover:bg-light-secondary  w-8 h-8 flex items-center justify-center rounded-[3px] text-[1.35rem] sm:text-3xl"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+        <span class=" bg-light-secondary bg-opacity-80 dark:bg-opacity-80 hover:bg-light-secondary text-light-bg w-8 h-8 rounded-md  flex items-center justify-center drop-shadow-2xl absolute left-0 text-[1.35rem] sm:text-3xl"><i onmouseout="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseover="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-solid fa-user"></i></span>  
       </section>
       
       <section class="min-w-full max-w-full my-2 flex items-center">
@@ -51,7 +51,7 @@
         <section class="w-full h-full flex items-center justify-between">
         
           <!-- Fitur pencarian -->
-          <form action="" class="h-full bg-light-secondary bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
+          <form action="" class="h-full bg-light-secondary bg-opacity-40 dark:bg-opacity-40 hover:bg-light-secondary max-sm:min-w-full py-1 px-[2px] sm:px-1 md:px-1.5 rounded-3xl w-full max-w-full sm:w-[70%] sm:max-w-[70%] md:min-w-[50%] md:max-w-[50%]  sm:min-w-[40%] flex items-center relative">
             <input type="text" name="cari" id="cari" class="bg-[#e1e1e1] sm:min-h-[55%] min-w-full max-w-full rounded-3xl px-8 py-[.2rem] text-md sm:text-xl outline-light-accent border-solid sm:border-[1px] border-light-accent placeholder:truncate" placeholder="Cari di SellPatu...">
             <button type="submit" class="absolute left-4 text-light-text"><i class="fa-regular fa-magnifying-glass"></i></button>
             <button type="reset" class="absolute right-4 text-light-text"><i class="fa-sharp fa-regular fa-circle-xmark"></i></button>
@@ -59,10 +59,10 @@
           </form>
         
           <div class="sm:flex max-w-[100%] w-[30%] min-w-[30%] md:max-w-[45%] md:w-[42.5%] lg:max-w-[35%] h-full items-center justify-around hidden *:leading-none">
-            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
-            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
-            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
-            <span id="sideBtn" class="text-2xl z-50 cursor-pointer sm:text-[1.75rem] bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
+            <a href="#cart" id="tombol" class="text-2xl flex items-center justify-center bg-light-secondary bg-opacity-70 dark:bg-opacity-70 hover:bg-light-secondary sm:text-[1.75rem] font-bold text-light-bg w-11 h-11 rounded-md leading-none"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+            <a href="#login" class="text-lg flex items-center justify-center sm:text-xl font-semibold xl:font-bold text-light-bg bg-light-secondary bg-opacity-70 dark:bg-opacity-70 rounded-md hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-2 sm:!py-[.6rem] !leading-[1]">Masuk</a>
+            <a href="#login" class="hidden md:flex lg:flex items-center justify-center text-lg sm:text-xl font-semibold xl:font-bold rounded-md bg-light-secondary bg-opacity-70 dark:bg-opacity-70 text-light-bg hover:bg-light-bg hover:text-light-secondary transition-all px-4 py-1 sm:!py-[.6rem] !leading-none">Daftar</a>
+            <span id="sideBtn" class="text-2xl z-50 cursor-pointer sm:text-[1.75rem] bg-opacity-70 dark:bg-opacity-70 text-light-bg bg-light-secondary hover:bg-light-bg hover:text-light-secondary flex items-center justify-center w-10 h-10 rounded-sm leading-none p-0"><i onmouseover="(this.classList.replace('fa-regular', 'fa-solid'))" onmouseout="this.classList.replace('fa-solid', 'fa-regular')" class="transition-all fa-regular fa-list"></i></span>  
           </div>
         
         </section>
@@ -89,10 +89,10 @@
     </aside>
 
     <!-- Bagian untuk isi halaman -->
-    <main class=" no-scrollbar min-w-full max-w-full min-h-screen text-light-text bg-light-bg p-3 md:py-4 lg:py-5 flex flex-col pb-10">
+    <main class="dark no-scrollbar min-w-full max-w-full min-h-screen text-light-text dark:text-dark-text bg-light-bg dark:bg-dark-bg p-3 md:py-4 lg:py-5 flex flex-col pb-10">
         
         <section class="w-full h-full xs:px-16 sm:px-28 md:px-44 lg:px-14 xl:px-20 2xl:px-36">
-            <div class=" min-w-full max-w-full w-full min-h-20 h-full bg-light-tertiary bg-opacity-25 rounded-lg px-2 lg:px-5 py-1 pb-5">
+            <div class=" min-w-full max-w-full w-full min-h-20 h-full bg-light-tertiary dark:bg-dark-tertiary bg-opacity-25 dark:bg-opacity-25 rounded-lg px-2 lg:px-5 py-1 pb-5">
                 <div class="atas min-w-full w-full min-h-3 py-2">
                     <button onclick="window.history.back()" class="font-bold "><i class="text-3xl fa-solid fa-arrow-left"></i></button>
                 </div>
@@ -103,9 +103,9 @@
                         </div>
                         <div class="detail px-1 pb-5">
                             <div class="harga max-w-full flex mt-2">
-                                <h1 class="text-2xl font-bold text-light-secondary">Rp1.239.999</h1>
-                                <h6 class="place-content-end ml-1 text-sm text-light-text opacity-80 line-through">Rp1.999.999</h6>
-                                <span class="place-content-center text-base ml-2 bg-red-600 bg-opacity-20 text-red-800 px-1.5 rounded-md font-medium hover:scale-105">38%</span>
+                                <h1 class="text-2xl font-bold text-light-secondary dark:text-dark-text">Rp1.239.999</h1>
+                                <h6 class="place-content-end ml-1 text-sm text-light-text dark:text-dark-text opacity-80 line-through">Rp1.999.999</h6>
+                                <span class="place-content-center text-base ml-2 bg-red-600 bg-opacity-20 dark:bg-opacity-20 text-red-800 dark:text-red-600 px-1.5 rounded-md font-medium hover:scale-105">38%</span>
                             </div>
                             <div class="info max-w-full min-h-2 h-fit flex mt-2 gap-1.5 relative">
                                 <div class="max-w-full min-h-2 h-fit flex flex-col">
@@ -113,16 +113,16 @@
                                     <div class="moreInfo w-full min-w-full max-w-full min-h-2 mt-1.5 overflow-hidden">
                                         <div class="min-w-full min-h-2 max-h-11 h-11 no-scrollbar flex items-center gap-4 overflow-x-auto overflow-y-hidden *:cursor-default">
                                             <span class="text-base min-w-[4.5rem] max-w-[4.5rem] max-h-5 min-h-2 h-5 flex items-center ">Terjual: 5</span>
-                                            <span id="rating" class="text-xl bg-light-bg bg-opacity-30 hover:bg-opacity-30 hover:scale-95 min-w-24 max-w-24 w-24 min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
+                                            <span id="rating" class="text-xl bg-light-bg dark:bg-dark-bg bg-opacity-30 hover:bg-opacity-30 dark:bg-opacity-30 hover:dark:bg-opacity-30 hover:scale-95 min-w-24 max-w-24 w-24 min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
                                                 <i class="text-yellow-400 text-2xl fa-sharp fa-solid fa-star-sharp"></i>
                                                 <h1 class="font-bold text-lg ml-2">4,8</h1>
                                                 <h6 class="font-normal text-base ml-1">(6)</h6>
                                             </span>
-                                            <span id="rating" class="text-xl bg-light-bg bg-opacity-30 hover:bg-opacity-30 hover:scale-95 min-w-[8.5rem] max-w-36 min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
+                                            <span id="rating" class="text-xl bg-light-bg dark:bg-dark-bg bg-opacity-30 hover:bg-opacity-30 dark:bg-opacity-30 hover:dark:bg-opacity-30 hover:scale-95 min-w-[8.5rem] max-w-36 min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
                                                 <i class="text-emerald-600 text-2xl fa-solid fa-badge-percent"></i>
                                                 <h1 class="font-bold text-base ml-2">Flash Sale</h1>
                                             </span>
-                                            <span id="rating" class="text-xl bg-light-bg bg-opacity-30 hover:bg-opacity-30 hover:scale-95 min-w-[9.5rem] max-w-[9.5rem] min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
+                                            <span id="rating" class="text-xl bg-light-bg dark:bg-dark-bg bg-opacity-30 hover:bg-opacity-30 dark:bg-opacity-30 hover:dark:bg-opacity-30 hover:scale-95 min-w-[9.5rem] max-w-[9.5rem] min-h-fit h-10 max-h-10 flex items-center justify-center rounded-lg">
                                                 <i class="text-cyan-700 text-2xl fa-solid fa-tags"></i>
                                                 <h1 class="font-bold text-base ml-2">Tanda Khusus</h1>
                                             </span>
@@ -139,7 +139,7 @@
                                     <p class="text-justify mt-1 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias in necessitatibus minus ipsam repellat excepturi ratione dolorem impedit ipsa assumenda voluptatibus qui fuga iure atque pariatur at perspiciatis rem, tempore ea cupiditate consequatur molestiae ex deserunt! Doloremque facilis quas deserunt facere recusandae sint maiores nobis dolor aut deleniti quibusdam debitis quia, nulla esse corporis, enim suscipit iste animi. Illum veniam dolores ab sint, dolorem culpa id ad. Et libero, beatae, praesentium, error quisquam totam assumenda possimus odit deserunt vel aperiam aspernatur maiores illo itaque rerum neque. Veniam accusamus at minima ex libero, laborum magnam accusantium fugit nihil quaerat non voluptate!</p>
                                 </div>
                                 <div class="min-w-full flex items-center justify-center">
-                                    <button class="text-sm font-medium mt-2 bg-light-bg bg-opacity-50 px-4 py-1 rounded-xl">Lihat Selengkapnya</button>
+                                    <button class="text-sm font-medium mt-2 bg-light-bg dark:bg-dark-bg bg-opacity-50 dark:bg-opacity-50 px-4 py-1 rounded-xl">Lihat Selengkapnya</button>
                                 </div>
                             </div>
                         </div>
@@ -171,14 +171,14 @@
                             <h1 class="text-xl font-bold mb-1">Varian:</h1>
                             <div class="max-w-full min-w-full min-h-3 no-scrollbar text-md font-medium">
                                 <div class="min-w-full min-h-4 no-scrollbar overflow-x-auto overflow-y-hidden flex gap-4">
-                                    <span class="bg-light-bg hover:scale-105 bg-opacity-50 text-light-secondary min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Hitam</span>
-                                    <span class="bg-light-bg hover:scale-105 bg-opacity-50 text-light-secondary min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Putih</span>
-                                    <span class="bg-light-bg hover:scale-105 bg-opacity-50 text-light-secondary min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Cokelat</span>
-                                    <span class="bg-light-bg hover:scale-105 bg-opacity-50 text-light-secondary min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Abu</span>
+                                    <span class="bg-light-bg dark:bg-dark-bg hover:scale-105 bg-opacity-50 dark:bg-opacity-50 text-light-secondary dark:text-dark-text min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Hitam</span>
+                                    <span class="bg-light-bg dark:bg-dark-bg hover:scale-105 bg-opacity-50 dark:bg-opacity-50 text-light-secondary dark:text-dark-text min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Putih</span>
+                                    <span class="bg-light-bg dark:bg-dark-bg hover:scale-105 bg-opacity-50 dark:bg-opacity-50 text-light-secondary dark:text-dark-text min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Cokelat</span>
+                                    <span class="bg-light-bg dark:bg-dark-bg hover:scale-105 bg-opacity-50 dark:bg-opacity-50 text-light-secondary dark:text-dark-text min-w-20 w-20 max-w-20 min-h-2 h-9 max-h-9 truncate flex items-center justify-center rounded-lg">Abu</span>
                                 </div>
                             </div>
-                            <h1 class=" text-md font-bold mt-4 hover:scale-105 bg-light-bg bg-opacity-60 min-w-44 max-w-56 h-9 flex items-center justify-center gap-2 rounded-lg"><i class="text-amber-600 fa-solid fa-shoe-prints"></i> Ukuran: <i class="font-medium italic">XS, L, M, XL</i></h1>
-                            <h1 class="text-md font-bold mt-2 hover:scale-105 bg-light-bg bg-opacity-60 min-w-40 max-w-40 h-9 flex items-center justify-center gap-2 rounded-lg"><i class="text-green-700 fa-solid fa-boxes-stacked"></i> Stok: <i class="font-medium italic">2</i></h1>
+                            <h1 class=" text-md font-bold mt-4 hover:scale-105 bg-light-bg dark:bg-dark-bg bg-opacity-60 dark:bg-opacity-60 min-w-44 max-w-56 h-9 flex items-center justify-center gap-2 rounded-lg"><i class="text-amber-600 fa-solid fa-shoe-prints"></i> Ukuran: <i class="font-medium italic">XS, L, M, XL</i></h1>
+                            <h1 class="text-md font-bold mt-2 hover:scale-105 bg-light-bg dark:bg-dark-bg bg-opacity-60 dark:bg-opacity-60 min-w-40 max-w-40 h-9 flex items-center justify-center gap-2 rounded-lg"><i class="text-green-700 fa-solid fa-boxes-stacked"></i> Stok: <i class="font-medium italic">2</i></h1>
                         </div>
                         <div class="rating mt-5 min-w-full max-w-full">
                             <h1 class="text-xl font-bold">Rating:</h1>
@@ -195,7 +195,7 @@
                                     <input type="radio" name="rating" id="rating5" class="hidden" value="5">
                                     <label for="rating5" class="labelRating text-4xl text-yellow-500"><i class="fa-light fa-star-sharp"></i></label>
                                 </div>
-                                <button type="submit" name="rateProduk" class="text-base font-medium bg-light-bg w-20 min-w-20 max-w-20 h-8 min-h-8 max-h-8 rounded-md shadow-xs hover:shadow-none hover:scale-95">Submit</button>
+                                <button type="submit" name="rateProduk" class="text-base font-medium bg-light-bg dark:bg-dark-bg w-20 min-w-20 max-w-20 h-8 min-h-8 max-h-8 rounded-md shadow-xs hover:shadow-none hover:scale-95">Submit</button>
                             </form>
                         </div>
                         <script>
@@ -219,22 +219,22 @@
                                 });
                             });
                         </script>
-                        <div class="aksi min-w-full max-w-full min-h-2 mt-10 bg-light-bg bg-opacity-20 px-4 py-3 rounded-lg">
+                        <div class="aksi min-w-full max-w-full min-h-2 mt-10 bg-light-bg dark:bg-dark-bg bg-opacity-20 dark:bg-opacity-20 px-4 py-3 rounded-lg">
                             <h1 class="text-xl font-bold mb-5">Pembelian:</h1>
                             <form action="" method="get">
                                 <div class="min-w-full max-w-full min-h-2 flex flex-col">
                                     <div class="flex items-center gap-4">
                                         <label for="jumlah" class="text-lg font-bold">Jumlah:</label>
-                                        <input type="number" name="jumlah" id="jumlah" class="bg-light-bg bg-opacity-50 text-lg font-bold w-16 h-9 rounded-lg px-2 py-1" min="1" max="10" value="1">
+                                        <input type="number" name="jumlah" id="jumlah" class="bg-light-bg dark:bg-dark-bg bg-opacity-50 dark:bg-opacity-50 text-lg font-bold w-16 h-9 rounded-lg px-2 py-1" min="1" max="10" value="1">
                                     </div>
                                     <div class="flex flex-col">
                                         <label for="pesan" class="text-lg font-bold">Pesan:</label>
-                                        <textarea onchange="pesanWhatsapp = `https://api.whatsapp.com/send?phone=628&text=${this.value}`" name="pesan" id="pesan" class="no-scrollbar bg-light-bg bg-opacity-70 max-w-full min-w-full min-h-10 rounded-md px-3 py-2 text-lg font-medium placeholder:font-normal placeholder:text-light-secondary placeholder:text-opacity-50" placeholder="Tulis semua pesan kamu disini! (Ukuran, Varian, dsb)"></textarea>
+                                        <textarea onchange="pesanWhatsapp = `https://api.whatsapp.com/send?phone=628&text=${this.value}`" name="pesan" id="pesan" class="no-scrollbar bg-light-bg dark:bg-dark-bg bg-opacity-70 dark:bg-opacity-70 max-w-full min-w-full min-h-10 rounded-md px-3 py-2 text-lg font-medium placeholder:font-normal placeholder:text-light-secondary placeholder:dark:text-dark-accent dark:text-dark-accent placeholder:text-opacity-50 placeholder:dark:text-opacity-50" placeholder="Tulis semua pesan kamu disini! (Ukuran, Varian, dsb)"></textarea>
                                     </div>
                                     <div class="mt-3 tmbl w-full min-w-full max-w-full flex flex-col lg:flex-row lg:gap-5 gap-3">
-                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-bg shadow-xs hover:shadow-none hover:scale-95"><button id="toWa" class="flex gap-1.5 items-center justify-between" onclick="window.open(pesanWhatsapp, '_blank')"><i class="!p-0 text-emerald-700 text-2xl fa-brands fa-whatsapp"></i> Beli di WhatsApp</button></div>
-                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-secondary text-light-bg shadow-xs shadow-slate-300 hover:shadow-none hover:scale-95"><button class="flex gap-1.5 items-center justify-between" type="submit" name="submit"><i class="!p-0 text-light-bg text-2xl fa-solid fa-user-tie"></i> Beli di SellPatu</button></div>
-                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-bg text-light-secondary shadow-xs hover:shadow-none hover:scale-95"><button class="flex gap-1.5 items-center justify-between" type="submit" name="cart"><i class="!p-0 text-red-700 text-2xl fa-solid fa-cart-circle-plus"></i> Tambah ke Keranjang</button></div>
+                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-bg dark:bg-dark-bg shadow-xs hover:shadow-none hover:scale-95"><button id="toWa" class="flex gap-1.5 items-center justify-between" onclick="window.open(pesanWhatsapp, '_blank')"><i class="!p-0 text-emerald-700 text-2xl fa-brands fa-whatsapp"></i> Beli di WhatsApp</button></div>
+                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-secondary dark:bg-dark-text text-light-bg dark:text-dark-bg shadow-xs shadow-slate-300 hover:shadow-none hover:scale-95"><button class="flex gap-1.5 items-center justify-between" type="submit" name="submit"><i class="!p-0 text-light-bg dark:text-dark-bg text-2xl fa-solid fa-user-tie"></i> Beli di SellPatu</button></div>
+                                        <div class=" text-md font-medium w-52 min-w-52 max-w-52 h-10 max-h-10 min-h-10 flex items-center justify-center leading-none rounded-md bg-light-bg dark:bg-dark-bg text-light-secondary dark:text-dark-accent shadow-xs hover:shadow-none hover:scale-95"><button class="flex gap-1.5 items-center justify-between" type="submit" name="cart"><i class="!p-0 text-red-700 text-2xl fa-solid fa-cart-circle-plus"></i> Tambah ke Keranjang</button></div>
                                     </div>
                                 </div>
                             </form>

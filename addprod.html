@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Sellpatu.com</title>
+    <!-- Menulis tailwind harus didalam class -->
+    <!-- Kalau gk hapal classnya bisa liat di: https://tailwindcss.com/docs/ atau instal ext vscode:https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss -->
+    <!-- Menulis tampilan website menggunakan tailwindcss, yang diutamakan adalah tampilan untuk mobile, gunakan extension chrome untuk melihat tampilan mobile di chrome: https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb -->
+    <!-- Kalau ada elemen yang mau diubah tergantung ukuran layar, beberapa class tailwind css harus ditulis ulang juga sesuai kebutuhan, dengan mengawali dengan prefix => sm,md,lg,xl,2xl sesuai kebutuhan -->
+    
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Untuk Icon dalam website -->
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-duotone-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-thin.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-solid.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-regular.css" />
+    <link rel="stylesheet" href="fontawesome/css/sharp-light.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  </head>
+  <!-- Class dark di body menandakan kalau website sedang dalam keadaan darkmode, jika tidak ada class dark di body maka website sedang dalam keadaan lightmode -->
+   <!-- Untuk membedakan mana warna untuk darkmode dan lightmode, darkmode ditulis dengan => warna, contoh untuk background => bg-light-bg dark:bg-dark-bg dark:bg-dark-bg -->
+  <body class=" *:no-scrollbar no-scrollbar bg-light-bg dark:bg-dark-bg dark:bg-opacity-85 text-light-text dark:text-dark-text max-w-full min-w-full min-h-screen overflow-x-hidden">
+
+    <!-- Navbar -->
+    
+
+    <!-- Bagian untuk isi halaman -->
+    <main class="dar no-scrollbar min-w-full max-w-full min-h-screen text-light-text dark:text-dark-text bg-light-bg dark:bg-dark-bg dark:bg-opacity-85 dark:bg-dark-bg dark:bg-opacity-85 p-3 md:px-20 md:py-4 lg:px-44 lg:py-5 flex flex-col">
+      <!-- Ini adalah halaman menambahkan produk -->
+       <section class="max-w-full min-w-full xs:px-10 sm:px-24 md:px-28 lg:px-36 xl:px-40 2xl:px-52">
+        <form action="" method="post" class="max-w-full min-w-full min-h-3" enctype="multipart/form-data">
+            <div class="max-w-full min-w-full min-h-2 flex flex-col px-3 py-4 bg-light-tertiary dark:bg-dark-tertiary bg-opacity-35 dark:bg-opacity-25 rounded-lg relative">
+                <div class="atas">
+                    <button onclick="window.history.back()" class="font-bold absolute"><i class="text-2xl fa-solid fa-arrow-left"></i></button>
+                    <h1 class="text-lg lg:text-xl font-bold text-center ">Tambahkan Produk Anda!</h1>
+                </div>
+                <div class="min-w-full max-w-full min-h-2 mt-6 flex flex-col gap-5">
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="namaProd" class="text-lg font-semibold">Nama Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <input required type="text" name="namaProd" id="namaProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Nama produk anda...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="deskProd" class="text-lg font-semibold">Deskripsi Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <textarea required name="deskProd" id="deskProd" class="rounded-md min-h-32 px-4 py-2 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Deskripsikan seluruh hal yang berhubungan dengan produk anda..."></textarea>
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="hargaProd" class="text-lg font-semibold">Harga Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <input required type="number" name="hargaProd" id="hargaProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Harga produk anda...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="stokProd" class="text-lg font-semibold">Stok Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <input required type="number" name="stokProd" id="stokProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Stok produk anda...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="diskonProd" class="text-lg font-semibold">Diskon Bawaan: </label>
+                        <input required type="text" name="diskonProd" id="diskonProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Diskon awal produk anda...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="varProd" class="text-lg font-semibold">Varian warna tersedia: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">* Masukkan semua jenis varian yang tersedia dari produk ini, seperti warna dan sebagainya!</span>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">Gunakan tanda koma (,) sebagai pemisah antar varian!</span>
+                        <input required type="text" name="varProd" id="varProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="Hitam, Putih, Merah...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="ukurProd" class="text-lg font-semibold">Ukuran tersedia: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">* Masukkan semua jenis ukuran yang tersedia dari produk ini, seperti warna dan sebagainya!</span>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">Gunakan tanda koma (,) sebagai pemisah antar ukuran!</span>
+                        <input required type="text" name="ukurProd" id="ukurProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg dark:bg-opacity-85" placeholder="S, M, XXL...">
+                    </div>
+                    <div class="sect min-w-full max-w-full min-h-2 flex flex-col gap-0 *:m-0 *:*:m-0">
+                        <label for="gambarProd" class="text-lg font-semibold">Gambar Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <input required type="file" name="gambarProd" id="gambarProd" class="text-base font-semibold file:h-9 file:border-none file:outline-none file:rounded-md file:hover:scale-95 file:bg-[#eaddca] bg-light-bg dark:bg-dark-bg dark:bg-opacity-85 px-1 py-1 rounded-t-md rounded-b-md" accept="image/*" onchange="previewImage(event)">
+                        <div class="preview min-w-full max-w-full min-h-2 hidden">
+                          <div class="gmbr object-cover object-center min-w-full max-w-full p-5 bg-light-bg dark:bg-dark-bg rounded-b-md">
+                            <img id="preview" alt="" class=" max-w-full min-w-full rounded-md">
+                          </div>
+                        </div>
+                    </div>
+                    
+
+                    <script>
+                    function previewImage(event) {
+                      const input = event.target;
+                      const preview = document.getElementById('preview');
+                      const reader = new FileReader();
+
+                      reader.onload = function() {
+                        preview.src = reader.result;
+                        preview.parentElement.parentElement.classList.replace("hidden", "block")
+                        input.classList.remove('rounded-b-md')
+                      };
+
+                      if (input.files && input.files[0]) {
+                        reader.readAsDataURL(input.files[0]);
+                      }
+                    }
+                    </script>
+                    <!-- <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="ukurProd" class="text-lg font-semibold">Gambar Produk: <i class="wajibIsi text-red-700 dark:text-red-600">*</i></label>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">* Upload gambar <a href="https://postimages.org/" class="text-blue-700 underline">disini</a> atau klik tombol dibawah</span>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none">Setelah gambar di-upload, copy DIRECT LINK-nya, lalu paste dikolom di bawah ini!</span>
+                        <span class="noteProd mb-2 text-yellow-700 dark:text-yellow-300 leading-none"><a href="https://postimages.org/" class="text-blue-700 underline">Klik disini</a> untuk tutorial mengupload gambar</span>
+                        <input required type="text" name="ukurProd" id="ukurProd" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg" placeholder="https://i.postimg.cc/aBcdEFgHiJ/abcDefGHIjKlM.jpg">
+                        <button type="button" class="bg-light-secondary bg-opacity-70 hover:bg-light-secondary text-light-bg rounded-md px-4 py-1 text-lg font-semibold mt-2 w-fit" onclick="window.open('https://postimages.org/', '', 'width=5000&height=5000')">Upload Disini</button>
+                    </div> -->
+                    
+                    <!-- <div class="sect min-w-full max-w-full min-h-2 flex flex-col">
+                        <label for="namaProd" class="text-lg font-semibold">Nama Produk: </label>
+                        <input required type="text" name="Prod" id="Prod" class="rounded-md min-h-8 h-9 px-4 text-lg bg-light-bg dark:bg-dark-bg" placeholder="Nama produk anda...">
+                    </div> -->
+                    <!-- <span class="noteProd text-yellow-700 dark:text-yellow-300"></span> -->
+                     <div class="flex min-w-full max-w-full min-h-1 items-center justify-center">
+                         <button type="submit" name="submit" class="min-w-40 w-56 max-w-56 min-h-10 max-h-12 text-xl font-bold rounded-md bg-light-bg dark:bg-dark-bg text-light-secondary dark:text-dark-text shadow-xs hover:scale-95 hover:shadow-none">Tambahkan Produk</button>
+                     </div>
+                </div>
+            </div>
+        </form>
+        
+       </section>
+      
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>

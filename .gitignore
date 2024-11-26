@@ -3,3 +3,4 @@ wanjay/
 style.css
 *.css
 package-lock.json
+.vscode/
